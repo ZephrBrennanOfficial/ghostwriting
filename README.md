@@ -1,2 +1,5 @@
-# ghostwriting
-LinkedIn ghostwriting service for founders — your voice, your posts, I just do the writing. Based in Aotearoa NZ.
+# Ghostwriting Service Site
+
+Live site for LinkedIn ghostwriting service.
+
+Deployed via GitHub Pages.
