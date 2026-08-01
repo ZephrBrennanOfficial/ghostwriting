@@ -640,7 +640,7 @@
       btn.disabled = true; btn.textContent = 'Sending...'; status.className = 'form-status';
       const data = { name: form.name.value, email: form.email.value, service: form.service.value, message: form.message.value, _honeypot: form._honeypot.value };
       try {
-        const res = await fetch( + FORM_ENDPOINT + r, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        const res = await fetch('https://vesper-6ec47f21.base44.app/functions/submitEnquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
         const result = await res.json();
         if (result.success) { status.className = 'form-status success'; status.textContent = "Enquiry received. Response within 24 hours."; form.reset(); }
         else { status.className = 'form-status error'; status.textContent = result.error || 'Something went wrong. Please try LinkedIn.'; }
@@ -656,7 +656,7 @@
       qBtn.disabled = true; qBtn.textContent = 'Sending...'; qStatus.className = 'form-status';
       const data = { name: document.getElementById('q-name').value, email: document.getElementById('q-email').value, service: 'Question / FAQ Submission', message: document.getElementById('q-message').value, _honeypot: qForm._honeypot.value };
       try {
-        const res = await fetch( + FORM_ENDPOINT + r, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+        const res = await fetch('https://vesper-6ec47f21.base44.app/functions/submitEnquiry', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
         const result = await res.json();
         if (result.success) { qStatus.className = 'form-status success'; qStatus.textContent = "Question received. It will be answered and added to the FAQ."; qForm.reset(); }
         else { qStatus.className = 'form-status error'; qStatus.textContent = result.error || 'Something went wrong. Please try again.'; }
